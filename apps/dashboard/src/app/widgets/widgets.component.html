@@ -10,6 +10,6 @@
 
   <app-widget-detail class="col-50" [widget]="currentWidget$ | async"
                      (saved)="saveWidget($event)"
-                     (cancelled)="reset($event)">
+                     (cancelled)="reset()">
   </app-widget-detail>
 </div>

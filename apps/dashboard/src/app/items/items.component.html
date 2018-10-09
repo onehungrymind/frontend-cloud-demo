@@ -10,6 +10,6 @@
 
   <app-item-detail class="col-50" [item]="currentItem$ | async"
                    (saved)="saveItem($event)"
-                   (cancelled)="resetCurrentItem($event)">
+                   (cancelled)="resetCurrentItem()">
   </app-item-detail>
 </div>
