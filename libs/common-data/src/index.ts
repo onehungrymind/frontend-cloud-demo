@@ -11,3 +11,5 @@ export { User } from './lib/core/users/users.model';
 export { ItemsFacade } from './lib/state/items/items.facade';
 export { WidgetsFacade } from './lib/state/widgets/widgets.facade';
 export { UsersFacade } from './lib/state/users/users.facade';
+
+export { AuthService } from './lib/core/auth.service';
