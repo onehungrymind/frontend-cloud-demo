@@ -7,7 +7,7 @@
     "start": "concurrently \"npm run server\" \"ng serve\"",
     "server": "json-server server/api/db.json --watch",
     "build": "ng build",
-    "deploy:s3": "ng build --prod && aws s3 cp ./dist/apps/dashboard s3://dev.venturplex.com --recursive --acl public-read",
+    "deploy:s3": "ng build --prod && aws s3 cp ./dist/apps/dashboard s3://devopsftw.in --recursive --acl public-read",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
     "e2e": "ng e2e",
