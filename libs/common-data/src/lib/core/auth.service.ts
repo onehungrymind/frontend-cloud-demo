@@ -78,7 +78,7 @@ export class AuthService {
 
   logout() {
     this.userPool.getCurrentUser().signOut();
-    this.router.navigateByUrl('/auth');
+    this.router.navigateByUrl('');
     console.log('You are now logged out');
   }
 }
