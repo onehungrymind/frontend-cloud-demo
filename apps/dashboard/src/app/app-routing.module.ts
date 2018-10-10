@@ -6,11 +6,11 @@ import { WidgetsComponent } from './widgets/widgets.component';
 import { AuthComponent } from './auth/auth.component';
 
 const routes: Routes = [
-  {path: '', component: HomeComponent},
   {path: 'auth', component: AuthComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'items', component: ItemsComponent},
   {path: 'widgets', component: WidgetsComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'}
+  {path: '**', redirectTo: '/auth', pathMatch: 'full'}
 ];
 
 @NgModule({
