@@ -4,8 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "concurrently \"npm run server\" \"ng serve\"",
-    "server": "json-server server/api/db.json --watch",
+    "start": "ng serve",
     "build": "ng build",
     "deploy:s3": "ng build --prod && aws s3 cp ./dist/apps/dashboard s3://devopsftw.in --recursive --acl public-read",
     "test": "ng test",
