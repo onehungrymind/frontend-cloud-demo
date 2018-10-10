@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 
 import { Widget } from './widget.model';
 
-const BASE_URL = 'https://6xnxh4bo1k.execute-api.us-east-2.amazonaws.com/staging/widgets/';
+const BASE_URL = 'https://server.devopsftw.in/widgets/';
 const HEADER = {headers: new HttpHeaders({'Content-Type': 'application/json'})};
 
 @Injectable({providedIn: 'root'})
