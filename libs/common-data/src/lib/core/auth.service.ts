@@ -5,12 +5,13 @@ import {
   CognitoUserAttribute,
   CognitoUserPool
 } from 'amazon-cognito-identity-js';
+import { poolId, clientId } from 'keys/congito';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
   poolData = {
-    UserPoolId: 'us-east-1_dl6vFSu0L',
-    ClientId: '619okk5ga9uib4aak6iu06j2p1'
+    UserPoolId: poolId,
+    ClientId: clientId
   };
   userPool = new CognitoUserPool(this.poolData);
 
