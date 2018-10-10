@@ -1,0 +1,15 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-gap: 20px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 20px;
+}
+
+.login-grid {
+  grid-column: 2/7;
+}
+
+.signup-grid {
+  grid-column: 7/12;
+}

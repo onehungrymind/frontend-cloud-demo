@@ -8,6 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Angular NgRx Quickstart';
   links = [
+    { path: '/auth', icon: 'person', label: 'Auth'},
     { path: '/home', icon: 'home', label: 'Home'},
     { path: '/items', icon: 'list', label: 'Items'},
     { path: '/widgets', icon: 'view_quilt', label: 'Widgets'}

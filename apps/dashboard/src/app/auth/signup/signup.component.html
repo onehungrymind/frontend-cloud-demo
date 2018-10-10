@@ -1,0 +1,45 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Signup</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="signupGroup" (submit)="signup(signupGroup.value)">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="email" placeholder="Email" name="email" formControlName="email">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Username" name="username" formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="password" placeholder="Password" name="password" formControlName="password">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button type="submit">Signup</button>
+      <button mat-button type="reset">Cancel</button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>
+      <h1>Confirmation Code</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <form [formGroup]="signupGroup" (submit)="confirm(signupGroup.value)">
+    <mat-card-content>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Username" name="username" formControlName="username">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput type="text" placeholder="Code" name="code" formControlName="code">
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button type="submit">Confirm</button>
+    </mat-card-actions>
+  </form>
+</mat-card>

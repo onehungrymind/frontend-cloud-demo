@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <div class="login-grid">
+    <app-login [loginGroup]="form"
+               (loggedIn)="login($event)">
+    </app-login>
+  </div>
+  <div class="signup-grid">
+    <app-signup [signupGroup]="form"
+                (signedUp)="signup($event)"
+                (confirmed)="confirmation($event)">
+    </app-signup>
+  </div>
+</div>
+
+

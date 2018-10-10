@@ -33,6 +33,22 @@ export class AuthService {
     }));
   }
 
+  confirm(username: string, code: string) {
+    const userData = {
+      Username: username,
+      Pool: this.userPool
+    };
+    const cognitoUser = new CognitoUser(userData);
+
+    cognitoUser.confirmRegistration(code, true, (err, res) => {
+      if (err) {
+        console.log('There was an error -> ', err);
+      } else {
+        console.log('You have been confirmed');
+      }
+    })
+  }
+
   login(username: string, password: string) {
     const authData = {
       Username: username,
@@ -57,5 +73,6 @@ export class AuthService {
 
   logout() {
     this.userPool.getCurrentUser().signOut();
+    console.log('You are now logged out');
   }
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CommonDataModule } from '@workspace/common-data';
@@ -17,6 +17,10 @@ import { WidgetDetailComponent } from './widgets/widget-detail/widget-detail.com
 import { WidgetsListComponent } from './widgets/widgets-list/widgets-list.component';
 import { WidgetsTotalComponent } from './widgets/widgets-total/widgets-total.component';
 import { WidgetsComponent } from './widgets/widgets.component';
+import { AuthComponent } from './auth/auth.component';
+import { LoginComponent } from './auth/login/login.component';
+import { LogoutComponent } from './auth/logout/logout.component';
+import { SignupComponent } from './auth/signup/signup.component';
 
 @NgModule({
   declarations: [
@@ -29,12 +33,17 @@ import { WidgetsComponent } from './widgets/widgets.component';
     WidgetsComponent,
     WidgetDetailComponent,
     WidgetsListComponent,
-    WidgetsTotalComponent
+    WidgetsTotalComponent,
+    AuthComponent,
+    LoginComponent,
+    LogoutComponent,
+    SignupComponent
   ],
   imports: [
     BrowserAnimationsModule,
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     AppMaterialModule,
     CommonDataModule,
