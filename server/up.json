@@ -1,0 +1,7 @@
+{
+  "name": "devopsftw-server",
+  "profile": "default",
+  "regions": [
+    "us-east-2"
+  ]
+}
