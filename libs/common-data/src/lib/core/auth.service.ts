@@ -6,6 +6,7 @@ import {
   CognitoUserPool
 } from 'amazon-cognito-identity-js';
 import { poolId, clientId } from 'keys/congito';
+import { Router } from '@angular/router';
 
 @Injectable({providedIn: 'root'})
 export class AuthService {
@@ -15,7 +16,9 @@ export class AuthService {
   };
   userPool = new CognitoUserPool(this.poolData);
 
-  constructor() { }
+  constructor(
+    private router: Router
+  ) { }
 
   signup(user: string, password: string, email: string) {
     const emailData = {
@@ -64,6 +67,7 @@ export class AuthService {
 
     cognitoUser.authenticateUser(authDetails, {
       onSuccess: (res) => {
+        this.router.navigateByUrl('/home')
         console.log('You are now logged in.');
       },
       onFailure: (err) => {
@@ -74,6 +78,7 @@ export class AuthService {
 
   logout() {
     this.userPool.getCurrentUser().signOut();
+    this.router.navigateByUrl('/auth');
     console.log('You are now logged out');
   }
 }
