@@ -1,4 +1,4 @@
-# Angular NGRX Quickstart
+# Frontend Cloud Demo
 
 A simple REST app built using Angular, Angular Material, NGRX, and the Angular CLI via Nrwl.
 
