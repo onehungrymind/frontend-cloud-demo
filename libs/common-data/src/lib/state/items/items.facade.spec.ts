@@ -1,9 +1,9 @@
 import { TestBed } from '@angular/core/testing';
 import { Store, StoreModule } from '@ngrx/store';
-import { readFirst } from '@nrwl/nx/testing';
+import { readFirst } from '@nrwl/angular/testing';
 import { NgModule } from '@angular/core';
 import { EffectsModule } from '@ngrx/effects';
-import { NxModule } from '@nrwl/nx';
+import { NxModule } from '@nrwl/angular';
 import { Item } from '../../core/items/item.model';
 import { ItemsService } from '../../core/items/items.service';
 import { ItemsServiceStub } from '../../core/items/items.service.stub';
@@ -13,7 +13,7 @@ import { ItemsEffects } from './items.effects';
 import * as ItemsActions from './items.actions';
 
 interface TestSchema {
-  'items' : ItemsState
+  items: ItemsState;
 }
 
 fdescribe('ItemsFacade', () => {
@@ -23,26 +23,28 @@ fdescribe('ItemsFacade', () => {
   let itemsService: ItemsService;
 
   beforeEach(() => {
-    createItem = ( id:string, name = '', description = '', price = 0 ): Item => ({
+    createItem = (
+      id: string,
+      name = '',
+      description = '',
+      price = 0
+    ): Item => ({
       id,
       name: name ? `name-${id}` : id,
       description: description,
-      price: price,
+      price: price
     });
   });
 
   describe('used in NgModule', () => {
-
     beforeEach(() => {
       @NgModule({
         imports: [
           NxModule.forRoot(),
-          StoreModule.forRoot({items: itemsReducer}),
-          EffectsModule.forRoot([ItemsEffects]),
+          StoreModule.forRoot({ items: itemsReducer }),
+          EffectsModule.forRoot([ItemsEffects])
         ],
-        providers: [
-          {provide: ItemsService, useClass: ItemsServiceStub},
-        ]
+        providers: [{ provide: ItemsService, useClass: ItemsServiceStub }]
       })
       class RootModule {}
       TestBed.configureTestingModule({ imports: [RootModule] });
@@ -52,16 +54,15 @@ fdescribe('ItemsFacade', () => {
       facade = TestBed.get(ItemsFacade);
     });
 
-    it('allItems$ should return the current list', async (done) => {
+    it('allItems$ should return the current list', async done => {
       try {
         let list = await readFirst(facade.allItems$);
 
         expect(list.length).toBe(0);
 
-        store.dispatch(new ItemsActions.ItemsLoaded([
-          createItem('AAA'),
-          createItem('BBB')
-        ]));
+        store.dispatch(
+          new ItemsActions.ItemsLoaded([createItem('AAA'), createItem('BBB')])
+        );
 
         list = await readFirst(facade.allItems$);
 
@@ -73,16 +74,15 @@ fdescribe('ItemsFacade', () => {
       }
     });
 
-    it('currentItem$ should return the currently selectedItem', async (done) => {
+    it('currentItem$ should return the currently selectedItem', async done => {
       try {
         let current = await readFirst(facade.currentItem$);
 
         expect(current.id).toBeNull();
 
-        store.dispatch(new ItemsActions.ItemsLoaded([
-          createItem('AAA'),
-          createItem('BBB')
-        ]));
+        store.dispatch(
+          new ItemsActions.ItemsLoaded([createItem('AAA'), createItem('BBB')])
+        );
 
         store.dispatch(new ItemsActions.ItemSelected('BBB'));
 
@@ -122,7 +122,6 @@ fdescribe('ItemsFacade', () => {
     });
 
     describe('dispatchers', () => {
-
       beforeEach(() => {
         spyOn(store, 'dispatch');
       });

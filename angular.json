@@ -22,9 +22,7 @@
               "apps/dashboard/src/favicon.ico",
               "apps/dashboard/src/assets"
             ],
-            "styles": [
-              "apps/dashboard/src/styles.css"
-            ],
+            "styles": ["apps/dashboard/src/styles.css"],
             "scripts": [
               {
                 "input": "node_modules/document-register-element/build/document-register-element.js"
@@ -75,9 +73,7 @@
             "polyfills": "apps/dashboard/src/polyfills.ts",
             "tsConfig": "apps/dashboard/tsconfig.spec.json",
             "karmaConfig": "apps/dashboard/karma.conf.js",
-            "styles": [
-              "apps/dashboard/src/styles.css"
-            ],
+            "styles": ["apps/dashboard/src/styles.css"],
             "scripts": [],
             "assets": [
               "apps/dashboard/src/favicon.ico",
@@ -92,9 +88,7 @@
               "apps/dashboard/tsconfig.app.json",
               "apps/dashboard/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/dashboard/**"]
           }
         }
       }
@@ -114,9 +108,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/dashboard-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/dashboard-e2e/**"]
           }
         }
       }
@@ -142,9 +134,7 @@
               "libs/common-data/tsconfig.lib.json",
               "libs/common-data/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/common-data/**"]
           }
         }
       }
@@ -182,9 +172,7 @@
               "libs/totals-view/tsconfig.lib.json",
               "libs/totals-view/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/totals-view/**"]
           }
         }
       }
@@ -204,13 +192,8 @@
             "main": "apps/embed/src/main.ts",
             "polyfills": "apps/embed/src/polyfills.ts",
             "tsConfig": "apps/embed/tsconfig.app.json",
-            "assets": [
-              "apps/embed/src/favicon.ico",
-              "apps/embed/src/assets"
-            ],
-            "styles": [
-              "apps/embed/src/styles.css"
-            ],
+            "assets": ["apps/embed/src/favicon.ico", "apps/embed/src/assets"],
+            "styles": ["apps/embed/src/styles.css"],
             "scripts": []
           },
           "configurations": {
@@ -257,14 +240,9 @@
             "polyfills": "apps/embed/src/polyfills.ts",
             "tsConfig": "apps/embed/tsconfig.spec.json",
             "karmaConfig": "apps/embed/karma.conf.js",
-            "styles": [
-              "apps/embed/src/styles.css"
-            ],
+            "styles": ["apps/embed/src/styles.css"],
             "scripts": [],
-            "assets": [
-              "apps/embed/src/favicon.ico",
-              "apps/embed/src/assets"
-            ]
+            "assets": ["apps/embed/src/favicon.ico", "apps/embed/src/assets"]
           }
         },
         "lint": {
@@ -274,9 +252,7 @@
               "apps/embed/tsconfig.app.json",
               "apps/embed/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/embed/**"]
           }
         }
       }
@@ -296,9 +272,7 @@
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": "apps/embed-e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/embed-e2e/**"]
           }
         }
       }
@@ -309,7 +283,20 @@
       "typescriptMismatch": false,
       "versionMismatch": false
     },
-    "defaultCollection": "@nrwl/schematics"
+    "defaultCollection": "@nrwl/angular"
   },
-  "defaultProject": "dashboard"
+  "defaultProject": "dashboard",
+  "schematics": {
+    "@nrwl/schematics:library": {
+      "unitTestRunner": "karma",
+      "framework": "angular"
+    },
+    "@nrwl/schematics:application": {
+      "unitTestRunner": "karma",
+      "e2eTestRunner": "protractor"
+    },
+    "@nrwl/schematics:node-application": {
+      "framework": "express"
+    }
+  }
 }

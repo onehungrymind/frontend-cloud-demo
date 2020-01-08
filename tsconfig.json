@@ -1,31 +1,22 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "importHelpers": true,
     "sourceMap": true,
     "declaration": false,
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2017",
-      "dom"
-    ],
+    "target": "es2015",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2017", "dom"],
     "baseUrl": ".",
     "paths": {
-      "@workspace/common-data": [
-        "libs/common-data/src/index.ts"
-      ],
-      "@workspace/totals-view": [
-        "libs/totals-view/src/index.ts"
-      ]
-    }
+      "@workspace/common-data": ["libs/common-data/src/index.ts"],
+      "@workspace/totals-view": ["libs/totals-view/src/index.ts"]
+    },
+    "module": "esnext",
+    "rootDir": "."
   },
-  "exclude": [
-    "node_modules",
-    "tmp"
-  ]
+  "exclude": ["node_modules", "tmp"]
 }

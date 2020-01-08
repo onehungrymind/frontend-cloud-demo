@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Injector, NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { NxModule } from '@nrwl/nx';
+import { NxModule } from '@nrwl/angular';
 import { createCustomElement } from '@angular/elements';
 import { TotalsComponent } from '@workspace/totals-view';
 
@@ -16,8 +16,9 @@ export class AppModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const el = createCustomElement(TotalsComponent, {injector: this.injector});
+    const el = createCustomElement(TotalsComponent, {
+      injector: this.injector
+    });
     customElements.define('totals-view', el);
   }
-
 }
