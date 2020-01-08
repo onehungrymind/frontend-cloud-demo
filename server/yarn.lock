@@ -728,8 +728,8 @@ lodash-id@^0.14.0:
   resolved "https://registry.yarnpkg.com/lodash-id/-/lodash-id-0.14.0.tgz#baf48934e543a1b5d6346f8c84698b1a8c803896"
 
 lodash@4, lodash@^4.17.10:
-  version "4.17.10"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.10.tgz#1b7793cf7259ea38fb3661d4d38b3260af8ae4e7"
+  version "4.17.15"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
 
 lowdb@^0.15.0:
   version "0.15.5"
@@ -1250,6 +1250,10 @@ unpipe@1.0.0, unpipe@~1.0.0:
 unzip-response@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/unzip-response/-/unzip-response-2.0.1.tgz#d2f0f737d16b0615e72a6935ed04214572d56f97"
+
+up@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/up/-/up-1.0.2.tgz#25f87686fdac510f67444fe8b7bd1588b5595267"
 
 update-notifier@^2.5.0:
   version "2.5.0"
